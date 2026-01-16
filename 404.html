@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Page not found - Quality Credit & Legal">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://qualitycredit.co.za/404.html">
+    <meta property="og:title" content="404 - Page Not Found | Quality Credit & Legal">
+    <meta property="og:description" content="The page you're looking for doesn't exist.">
+    <meta property="og:image" content="https://qualitycredit.co.za/logo1.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://qualitycredit.co.za/404.html">
+    <meta property="twitter:title" content="404 - Page Not Found | Quality Credit & Legal">
+    <meta property="twitter:description" content="The page you're looking for doesn't exist.">
+    <meta property="twitter:image" content="https://qualitycredit.co.za/logo1.jpg">
+    
+    <link rel="canonical" href="https://qualitycredit.co.za/404.html">
+    
     <title>404 - Page Not Found | Quality Credit & Legal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +29,8 @@
     <link rel="icon" type="image/png" href="favicon1.png">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="animated-background"></div>
     <!-- Logo Banner -->
     <div class="logo-banner">
@@ -41,8 +60,18 @@
         </div>
     </nav>
 
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>404</li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- 404 Content -->
-    <section class="hero" style="padding: 8rem 2rem;">
+    <section class="hero" id="main-content" style="padding: 8rem 2rem;">
         <h1 style="font-size: 6rem; margin-bottom: 1rem; color: var(--primary-color);">404</h1>
         <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-color);">Page Not Found</h2>
         <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -112,6 +141,26 @@
                 mobileMenuToggle.classList.toggle('active');
             });
         }
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>

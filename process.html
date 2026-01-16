@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn how Quality Credit & Legal's debt review process works. From consultation to implementation, we guide you every step of the way.">
     <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://qualitycredit.co.za/process.html">
+    <meta property="og:title" content="Our Process - Quality Credit & Legal">
+    <meta property="og:description" content="Learn how our debt review process works. From consultation to implementation.">
+    <meta property="og:image" content="https://qualitycredit.co.za/logo1.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://qualitycredit.co.za/process.html">
+    <meta property="twitter:title" content="Our Process - Quality Credit & Legal">
+    <meta property="twitter:description" content="Learn how our debt review process works. From consultation to implementation.">
+    <meta property="twitter:image" content="https://qualitycredit.co.za/logo1.jpg">
+    
     <link rel="canonical" href="https://qualitycredit.co.za/process.html">
+    
     <title>Our Process - Quality Credit & Legal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +30,8 @@
     <link rel="icon" type="image/png" href="favicon1.png">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="animated-background"></div>
     <!-- Logo Banner -->
     <div class="logo-banner">
@@ -43,8 +61,18 @@
         </div>
     </nav>
 
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Process</li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="main-content">
         <h1>How Our Process Works</h1>
         <p>Simple, straightforward steps to help you regain control of your finances.</p>
     </section>
@@ -163,6 +191,26 @@
                 mobileMenuToggle.classList.toggle('active');
             });
         }
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        document.querySelectorAll('section, .service-card, .step').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
