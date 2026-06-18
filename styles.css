@@ -92,7 +92,7 @@ body::after {
     background-size: 400px;
     background-repeat: repeat;
     background-position: center center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     filter: grayscale(100%) brightness(1.2) contrast(0.9);
     opacity: 0.3;
     z-index: -3;
@@ -752,7 +752,6 @@ section {
     position: relative;
     display: inline-block;
     width: 100%;
-    animation: headerFadeInUp 0.9s ease-out;
 }
 
 .section-title::after {
@@ -867,9 +866,6 @@ section {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', Times, serif;
-    animation: headerFadeInUp 0.7s ease-out;
-    animation-fill-mode: both;
-    animation-delay: 0.1s;
 }
 
 .service-card p {
@@ -904,8 +900,6 @@ section {
 
 .step {
     text-align: center;
-    animation: fadeInUp 0.6s ease-out;
-    animation-fill-mode: both;
     transition: all var(--transition-base);
     padding: 2rem;
     border-radius: var(--radius-lg);
@@ -940,10 +934,6 @@ section {
     transform: scaleX(1);
 }
 
-.step:nth-child(1) { animation-delay: 0.1s; }
-.step:nth-child(2) { animation-delay: 0.2s; }
-.step:nth-child(3) { animation-delay: 0.3s; }
-.step:nth-child(4) { animation-delay: 0.4s; }
 
 .step-number {
     font-size: 1.5rem;
@@ -994,8 +984,6 @@ section {
     color: var(--primary-color);
     margin-bottom: 0.8rem;
     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', Times, serif;
-    animation: headerFadeInUp 0.7s ease-out;
-    animation-fill-mode: both;
 }
 
 .step p {
@@ -1078,8 +1066,6 @@ section {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', Times, serif;
-    animation: headerFadeInUp 0.7s ease-out;
-    animation-fill-mode: both;
 }
 
 .phone-option-card p {
@@ -1171,7 +1157,6 @@ section {
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', Times, serif;
-    animation: headerFadeInUp 0.8s ease-out;
 }
 
 .contact p {
@@ -1453,7 +1438,6 @@ footer > * {
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
     letter-spacing: -0.02em;
-    animation: headerFadeInUp 0.8s ease-out;
 }
 
 .footer-cta p {
@@ -1516,8 +1500,6 @@ footer > * {
     margin-bottom: 1.5rem;
     font-weight: 600;
     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', Times, serif;
-    animation: headerFadeInUp 0.7s ease-out;
-    animation-fill-mode: both;
 }
 
 .address-details p {
@@ -1542,8 +1524,6 @@ footer > * {
     margin-bottom: 1.5rem;
     font-weight: 600;
     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', Times, serif;
-    animation: headerFadeInUp 0.7s ease-out;
-    animation-fill-mode: both;
 }
 
 .map-wrapper {
@@ -2031,7 +2011,6 @@ footer > * {
     margin-bottom: 1.5rem;
     font-family: 'Playfair Display', serif;
     letter-spacing: -0.02em;
-    animation: headerFadeInUp 0.8s ease-out;
 }
 
 .mid-cta p {
@@ -2062,7 +2041,6 @@ footer > * {
 }
 
 .trust-badges .section-title {
-    animation: headerFadeInUp 1s ease-out;
     position: relative;
 }
 
@@ -2190,8 +2168,6 @@ footer > * {
     font-family: 'Playfair Display', serif;
     letter-spacing: -0.01em;
     transition: color var(--transition-base);
-    animation: headerFadeInUp 0.7s ease-out;
-    animation-fill-mode: both;
 }
 
 .trust-badge-card:hover h3 {
@@ -2275,8 +2251,6 @@ footer > * {
     margin-bottom: 1.5rem;
     font-family: 'Playfair Display', serif;
     font-weight: 600;
-    animation: headerFadeInUp 0.7s ease-out;
-    animation-fill-mode: both;
 }
 
 .service-benefit ul,
@@ -2409,7 +2383,6 @@ footer > * {
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
     font-weight: 600;
-    animation: headerFadeInUp 0.7s ease-out;
 }
 
 .service-cta-card p {
@@ -2496,8 +2469,6 @@ footer > * {
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
     font-weight: 600;
-    animation: headerFadeInUp 0.6s ease-out;
-    animation-fill-mode: both;
 }
 
 .faq-item p {
@@ -2731,5 +2702,48 @@ select:focus {
 
     .faq-item h3 {
         font-size: 1.1rem;
+    }
+}
+
+/* ==========================================================================
+   FOOTER UTILITY CLASSES
+   ========================================================================== */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.footer-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-link:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .animated-background {
+        animation: none;
+    }
+
+    footer::before {
+        animation: none;
     }
 }

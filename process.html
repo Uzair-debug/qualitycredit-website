@@ -136,17 +136,17 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem; text-align: left;">
+            <div class="footer-grid">
                 <div>
                     <p><strong>Quality Credit & Legal</strong></p>
                     <p>Professional debt review and financial solutions for a better future</p>
                 </div>
                 <div>
                     <p><strong>Quick Links</strong></p>
-                    <p><a href="services.html" style="color: #cbd5e1; text-decoration: none; display: block; margin-bottom: 0.5rem;">Services</a></p>
-                    <p><a href="about.html" style="color: #cbd5e1; text-decoration: none; display: block; margin-bottom: 0.5rem;">About Us</a></p>
-                    <p><a href="faq.html" style="color: #cbd5e1; text-decoration: none; display: block; margin-bottom: 0.5rem;">FAQ</a></p>
-                    <p><a href="contact.html" style="color: #cbd5e1; text-decoration: none; display: block; margin-bottom: 0.5rem;">Contact</a></p>
+                    <p><a href="services.html" class="footer-link">Services</a></p>
+                    <p><a href="about.html" class="footer-link">About Us</a></p>
+                    <p><a href="faq.html" class="footer-link">FAQ</a></p>
+                    <p><a href="contact.html" class="footer-link">Contact</a></p>
                 </div>
                 <div>
                     <p><strong>Follow Us</strong></p>
@@ -180,37 +180,7 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.getElementById('navLinks');
-        if (mobileMenuToggle && navLinks) {
-            mobileMenuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                mobileMenuToggle.classList.toggle('active');
-            });
-        }
-
-        // Scroll Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections and cards
-        document.querySelectorAll('section, .service-card, .step').forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
 
