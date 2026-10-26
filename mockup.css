@@ -6,8 +6,9 @@
 :root {
     --navy: #0b2a4a;
     --navy-soft: #16406b;
-    --gold: #e8b04a;
-    --gold-dark: #d29a30;
+    --teal: #0b7a7c;
+    --teal-dark: #086466;
+    --teal-light: #6fd6d3;
     --paper: #fbf9f5;
     --paper-alt: #f3efe7;
     --white: #ffffff;
@@ -65,7 +66,7 @@ a:focus-visible, button:focus-visible {
 }
 .top-bar a:focus-visible, .site-nav a:focus-visible, .cta-band a:focus-visible,
 footer a:focus-visible, .site-nav button:focus-visible {
-    outline-color: var(--gold);
+    outline-color: var(--teal-light);
 }
 #main-content:focus { outline: none; }
 
@@ -116,7 +117,7 @@ footer a:focus-visible, .site-nav button:focus-visible {
     border-bottom: 2px solid transparent;
     transition: color 0.15s, border-color 0.15s;
 }
-.nav-links a:hover { color: #fff; border-bottom-color: var(--gold); }
+.nav-links a:hover { color: #fff; border-bottom-color: var(--teal-light); }
 
 .btn {
     display: inline-flex;
@@ -134,8 +135,8 @@ footer a:focus-visible, .site-nav button:focus-visible {
     transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-gold { background: var(--gold); color: var(--navy); box-shadow: 0 6px 16px rgba(210, 154, 48, 0.35); }
-.btn-gold:hover { background: var(--gold-dark); }
+.btn-gold { background: var(--teal); color: #fff; box-shadow: 0 6px 16px rgba(11, 122, 124, 0.3); }
+.btn-gold:hover { background: var(--teal-dark); }
 .btn-outline { border-color: var(--navy); color: var(--navy); background: transparent; }
 .btn-outline:hover { background: var(--navy); color: #fff; }
 .btn-whatsapp { background: var(--whatsapp); color: #fff; }
@@ -159,7 +160,7 @@ footer a:focus-visible, .site-nav button:focus-visible {
 /* ---------- Hero ---------- */
 .hero {
     background:
-        radial-gradient(900px 400px at 85% 0%, rgba(232, 176, 74, 0.18), transparent 70%),
+        radial-gradient(900px 400px at 85% 0%, rgba(20, 163, 165, 0.14), transparent 70%),
         linear-gradient(180deg, var(--paper) 0%, var(--paper-alt) 100%);
     padding: clamp(3rem, 7vw, 6rem) 0;
 }
@@ -182,7 +183,7 @@ footer a:focus-visible, .site-nav button:focus-visible {
     margin-bottom: 1.25rem;
 }
 .hero h1 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); font-weight: 700; margin-bottom: 1.25rem; }
-.hero h1 em { font-style: normal; color: var(--gold-dark); }
+.hero h1 em { font-style: normal; color: var(--teal); }
 .hero .lead { font-size: 1.2rem; color: var(--text-soft); max-width: 36rem; margin-bottom: 2rem; }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-bottom: 1.75rem; }
 .trust-chips { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; list-style: none; font-size: 0.95rem; color: var(--text-soft); }
@@ -225,8 +226,8 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
 .card .icon {
     width: 3.4rem; height: 3.4rem;
     border-radius: 14px;
-    background: rgba(232, 176, 74, 0.2);
-    color: var(--navy);
+    background: rgba(11, 122, 124, 0.12);
+    color: var(--teal);
     display: grid; place-items: center;
     margin-bottom: 1.25rem;
 }
@@ -239,7 +240,7 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
 .promises { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center; }
 .promise .icon {
     width: 4rem; height: 4rem; margin: 0 auto 1rem; border-radius: 50%;
-    background: var(--navy); color: var(--gold); display: grid; place-items: center;
+    background: var(--navy); color: var(--teal-light); display: grid; place-items: center;
 }
 .promise .icon svg { width: 1.9rem; height: 1.9rem; }
 .promise h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
@@ -259,9 +260,9 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
     content: counter(step);
     position: absolute; top: -1.3rem; left: 1.5rem;
     width: 2.6rem; height: 2.6rem; border-radius: 50%;
-    background: var(--gold); color: var(--navy);
+    background: var(--teal); color: #fff;
     font-weight: 700; display: grid; place-items: center;
-    box-shadow: 0 4px 10px rgba(210, 154, 48, 0.4);
+    box-shadow: 0 4px 10px rgba(11, 122, 124, 0.35);
 }
 .step h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
 .step p { color: var(--text-soft); font-size: 0.98rem; }
