@@ -1857,55 +1857,6 @@ footer > * {
    17. ACCESSIBILITY & NAVIGATION ENHANCEMENTS
    ========================================================================== */
 
-/* Breadcrumb Navigation */
-.breadcrumb-nav {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1rem 0;
-    margin-top: 80px;
-    border-bottom: 1px solid rgba(192, 192, 192, 0.1);
-    /* Also a <nav>, so keep it below the main menu's dropdown */
-    z-index: 1;
-}
-
-.breadcrumb {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-}
-
-.breadcrumb li {
-    display: flex;
-    align-items: center;
-    color: var(--accent-light);
-    font-size: 0.9rem;
-}
-
-.breadcrumb li:not(:last-child)::after {
-    content: '/';
-    margin-left: 0.5rem;
-    color: var(--accent-color);
-    opacity: 0.6;
-}
-
-.breadcrumb a {
-    color: var(--accent-light);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-}
-
-.breadcrumb a:hover,
-.breadcrumb a:focus {
-    color: var(--accent-color);
-    text-decoration: underline;
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
-    border-radius: 2px;
-}
-
 /* ==========================================================================
    18. SCROLL ANIMATIONS
    ========================================================================== */
@@ -2696,15 +2647,6 @@ select:focus-visible {
         font-size: 0.9rem;
     }
     
-    .breadcrumb-nav {
-        margin-top: 70px;
-        padding: 0.75rem 0;
-    }
-    
-    .breadcrumb {
-        font-size: 0.85rem;
-    }
-
     /* Success Stats Mobile */
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
