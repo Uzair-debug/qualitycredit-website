@@ -291,7 +291,95 @@ body::before {
     white-space: nowrap;
 }
 
+/* Chat panel: opens above the Chat button with one WhatsApp option per service */
+.chat-panel {
+    position: fixed;
+    bottom: 7.5rem;
+    right: 2rem;
+    width: 300px;
+    background: #ffffff;
+    border: 2px solid var(--accent-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    padding: 1.25rem;
+    z-index: 1001;
+    animation: fadeInUp 0.2s ease-out;
+}
+
+.chat-panel[hidden] {
+    display: none;
+}
+
+.chat-panel-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.chat-panel-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.chat-panel-option:hover {
+    border-color: #25D366;
+    background: rgba(37, 211, 102, 0.06);
+}
+
+.chat-panel-option strong {
+    display: block;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.chat-panel-number {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.chat-panel-icon {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: #25D366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-panel-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.chat-panel-more {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--primary-light);
+    text-align: center;
+}
+
 @media (max-width: 768px) {
+    .chat-panel {
+        bottom: 5.5rem;
+        right: 1rem;
+        left: 1rem;
+        width: auto;
+    }
+
     .chat-button {
         bottom: 1.5rem;
         right: 1.5rem;

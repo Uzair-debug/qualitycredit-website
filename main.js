@@ -29,6 +29,42 @@
         });
     }
 
+    // Chat button: open a small panel with one WhatsApp option per service.
+    // If this script doesn't run, the button still links to the contact page.
+    var chatButton = document.getElementById('chatButton');
+    var chatPanel = document.getElementById('chatPanel');
+    if (chatButton && chatPanel) {
+        chatButton.setAttribute('role', 'button');
+
+        var setChat = function (open) {
+            chatPanel.hidden = !open;
+            chatButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open) {
+                chatPanel.querySelector('a').focus();
+            }
+        };
+
+        chatButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            setChat(chatPanel.hidden);
+        });
+
+        // Close when clicking anywhere else on the page
+        document.addEventListener('click', function (e) {
+            if (!chatPanel.hidden && !chatPanel.contains(e.target) && !chatButton.contains(e.target)) {
+                setChat(false);
+            }
+        });
+
+        // Close with Escape and return focus to the button
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !chatPanel.hidden) {
+                setChat(false);
+                chatButton.focus();
+            }
+        });
+    }
+
     var observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 
     // Fade-in scroll animations for cards and non-hero sections
