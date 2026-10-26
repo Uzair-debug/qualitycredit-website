@@ -49,6 +49,14 @@
             setChat(chatPanel.hidden);
         });
 
+        // It acts as a button, so Space should open it too (links only react to Enter)
+        chatButton.addEventListener('keydown', function (e) {
+            if (e.key === ' ') {
+                e.preventDefault();
+                setChat(chatPanel.hidden);
+            }
+        });
+
         // Close when clicking anywhere else on the page
         document.addEventListener('click', function (e) {
             if (!chatPanel.hidden && !chatPanel.contains(e.target) && !chatButton.contains(e.target)) {
