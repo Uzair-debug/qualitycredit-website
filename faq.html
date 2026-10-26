@@ -112,17 +112,18 @@
     <link rel="icon" type="image/png" href="favicon1.png">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="animated-background"></div>
     <!-- Logo Banner -->
     <div class="logo-banner">
-        <a href="index.html" class="banner-link"></a>
+        <a href="index.html" class="banner-link" aria-label="Quality Credit &amp; Legal home page"></a>
     </div>
 
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo-text"><a href="index.html"><span class="company-name"><span>Quality</span> <span>Credit</span> <span class="ampersand">&</span> <span>Legal</span></span></a></div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks" id="mobileMenuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -152,7 +153,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="main-content">
+    <section class="hero" id="main-content" tabindex="-1">
         <h1>Frequently Asked Questions</h1>
         <p>Find answers to common questions about our debt review services.</p>
     </section>
@@ -160,6 +161,7 @@
     <!-- FAQ Content -->
     <section class="services">
         <div class="container">
+            <h2 class="sr-only">Questions and answers</h2>
             <div class="faq-content">
                 <div class="service-card" style="text-align: left; max-width: 900px; margin: 0 auto 2rem;">
                     <h3 style="color: #1a365d; margin-bottom: 1rem;">What is Debt Review?</h3>

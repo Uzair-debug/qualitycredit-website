@@ -3,9 +3,29 @@
     var toggle = document.getElementById('mobileMenuToggle');
     var navLinks = document.getElementById('navLinks');
     if (toggle && navLinks) {
+        var setMenu = function (open) {
+            navLinks.classList.toggle('active', open);
+            toggle.classList.toggle('active', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+
         toggle.addEventListener('click', function () {
-            navLinks.classList.toggle('active');
-            toggle.classList.toggle('active');
+            setMenu(!navLinks.classList.contains('active'));
+        });
+
+        // Close the menu after choosing a link
+        navLinks.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                setMenu(false);
+            });
+        });
+
+        // Close the menu with Escape and return focus to the button
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                setMenu(false);
+                toggle.focus();
+            }
         });
     }
 

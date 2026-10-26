@@ -123,17 +123,18 @@
     <link rel="icon" type="image/png" href="favicon1.png">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="animated-background"></div>
     <!-- Logo Banner -->
     <div class="logo-banner">
-        <a href="index.html" class="banner-link"></a>
+        <a href="index.html" class="banner-link" aria-label="Quality Credit &amp; Legal home page"></a>
     </div>
 
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo-text"><a href="index.html"><span class="company-name"><span>Quality</span> <span>Credit</span> <span class="ampersand">&</span> <span>Legal</span></span></a></div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks" id="mobileMenuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -162,7 +163,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="main-content">
+    <section class="hero" id="main-content" tabindex="-1">
         <h1>Quality Credit & Legal</h1>
         <p>Professional debt review services helping you manage your debt, negotiate with creditors, and regain control of your finances.</p>
         <a href="contact.html" class="btn-primary">Speak to an Agent</a>
@@ -273,7 +274,7 @@
         <div class="container">
             <h2>Get Started with Our Call Center</h2>
             <p>Call or email our debt review call center to speak directly with a trained consultant about your situation.</p>
-            <a href="contact.html" class="btn-primary">Call Now for Help</a>
+            <a href="contact.html" class="btn-primary">Contact Us for Help</a>
             
             <div class="contact-info">
                 <p><strong>Call Center Email:</strong> <a href="mailto:admin@qualitycredit.co.za" style="color: var(--accent-color);">admin@qualitycredit.co.za</a></p>
@@ -286,7 +287,7 @@
 
     <!-- Chat Button -->
     <a href="contact.html#chat-with-us" class="chat-button" aria-label="Chat with us">
-        <span class="chat-icon">💬</span>
+        <span class="chat-icon" aria-hidden="true">💬</span>
         <span class="chat-text">Chat with us</span>
     </a>
 

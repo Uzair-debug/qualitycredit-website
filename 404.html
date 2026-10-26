@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Page not found - Quality Credit & Legal">
+    <meta name="robots" content="noindex, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -25,35 +26,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="favicon1.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/favicon1.png">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="animated-background"></div>
     <!-- Logo Banner -->
     <div class="logo-banner">
-        <a href="index.html" class="banner-link"></a>
+        <a href="/index.html" class="banner-link" aria-label="Quality Credit &amp; Legal home page"></a>
     </div>
 
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo-text"><a href="index.html"><span class="company-name"><span>Quality</span> <span>Credit</span> <span class="ampersand">&</span> <span>Legal</span></span></a></div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
+            <div class="logo-text"><a href="/index.html"><span class="company-name"><span>Quality</span> <span>Credit</span> <span class="ampersand">&</span> <span>Legal</span></span></a></div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks" id="mobileMenuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="services.html">Services</a></li>
-                <li><a href="process.html">Process</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="location.html">Location</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/process.html">Process</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/location.html">Location</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="contact.html" class="cta-button">Get Started</a>
+                <a href="/contact.html" class="cta-button">Get Started</a>
             </div>
         </div>
     </nav>
@@ -62,22 +64,22 @@
     <nav aria-label="Breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/index.html">Home</a></li>
                 <li>404</li>
             </ol>
         </div>
     </nav>
 
     <!-- 404 Content -->
-    <section class="hero" id="main-content" style="padding: 8rem 2rem;">
+    <section class="hero" id="main-content" tabindex="-1" style="padding: 8rem 2rem;">
         <h1 style="font-size: 6rem; margin-bottom: 1rem; color: var(--primary-color);">404</h1>
-        <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-color);">Page Not Found</h2>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--accent-light);">Page Not Found</h2>
+        <p style="font-size: 1.2rem; color: var(--accent-light); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
             Sorry, the page you're looking for doesn't exist. It may have been moved or deleted.
         </p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="index.html" class="btn-primary">Go to Homepage</a>
-            <a href="contact.html" class="btn-primary" style="background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color);">Contact Us</a>
+            <a href="/index.html" class="btn-primary">Go to Homepage</a>
+            <a href="/contact.html" class="btn-primary" style="background: transparent; border: 2px solid var(--accent-color); color: #ffffff;">Contact Us</a>
         </div>
     </section>
 
@@ -91,10 +93,10 @@
                 </div>
                 <div>
                     <p><strong>Quick Links</strong></p>
-                    <p><a href="services.html" class="footer-link">Services</a></p>
-                    <p><a href="about.html" class="footer-link">About Us</a></p>
-                    <p><a href="faq.html" class="footer-link">FAQ</a></p>
-                    <p><a href="contact.html" class="footer-link">Contact</a></p>
+                    <p><a href="/services.html" class="footer-link">Services</a></p>
+                    <p><a href="/about.html" class="footer-link">About Us</a></p>
+                    <p><a href="/faq.html" class="footer-link">FAQ</a></p>
+                    <p><a href="/contact.html" class="footer-link">Contact</a></p>
                 </div>
                 <div>
                     <p><strong>Follow Us</strong></p>
@@ -121,13 +123,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Quality Credit & Legal. All rights reserved. | <a href="privacy.html" style="color: #94a3b8;">Privacy Policy</a></p>
+                <p>&copy; 2026 Quality Credit & Legal. All rights reserved. | <a href="/privacy.html" style="color: #94a3b8;">Privacy Policy</a></p>
                 <p style="margin-top: 0.5rem; font-size: 0.8rem;">NCR Registration Number: NCRDC4274</p>
                 <p style="margin-top: 0.5rem; font-size: 0.8rem;">Legal services provided by Panday Attorneys</p>
             </div>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>

@@ -371,7 +371,9 @@ nav {
     background: transparent;
     border-bottom: 2px solid rgba(192, 192, 192, 0.2);
     padding: 0;
-    position: static;
+    /* relative (not static) so z-index applies and the mobile menu
+       opens above the page content instead of behind it */
+    position: relative;
     z-index: 100;
     transition: all var(--transition-base);
 }
@@ -1669,6 +1671,11 @@ footer > * {
         background: rgba(0, 31, 63, 0.05);
     }
 
+    /* The mobile dropdown has a light background, so use dark text */
+    .nav-links.active a {
+        color: var(--primary-color);
+    }
+
     .nav-actions {
         margin-left: auto;
     }
@@ -1768,6 +1775,8 @@ footer > * {
     padding: 1rem 0;
     margin-top: 80px;
     border-bottom: 1px solid rgba(192, 192, 192, 0.1);
+    /* Also a <nav>, so keep it below the main menu's dropdown */
+    z-index: 1;
 }
 
 .breadcrumb {
@@ -2303,7 +2312,8 @@ footer > * {
     border-color: var(--primary-color);
 }
 
-.step-number {
+/* Scoped to the services page so it doesn't shrink the home page step circles */
+.process-step .step-number {
     width: 40px;
     height: 40px;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
@@ -2477,26 +2487,67 @@ footer > * {
     margin: 0;
 }
 
-/* Enhanced Focus States for Accessibility */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 3px;
+/* Enhanced Focus States for Accessibility
+   Two-tone ring (white inside, navy outside) stays visible on both the
+   light cards and the dark navy areas. :focus-visible shows it for
+   keyboard users without flashing it on every mouse click. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 0;
+    box-shadow: 0 0 0 5px var(--primary-light);
     border-radius: 2px;
 }
 
 /* Improved keyboard navigation */
-.nav-links a:focus,
-.cta-button:focus,
-.btn-primary:focus,
-.phone-button:focus,
-.whatsapp-button:focus,
-.chat-button:focus {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 3px;
+.nav-links a:focus-visible,
+.cta-button:focus-visible,
+.btn-primary:focus-visible,
+.phone-button:focus-visible,
+.whatsapp-button:focus-visible,
+.chat-button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 0;
+    box-shadow: 0 0 0 5px var(--primary-light);
+}
+
+/* Skip link: hidden until a keyboard user tabs to it */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 2000;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* The skip link moves focus to the hero; it doesn't need a ring */
+#main-content:focus {
+    outline: none;
+}
+
+/* Visually hidden but still read by screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Responsive Trust Badges */
@@ -2655,7 +2706,7 @@ select:focus {
         gap: 0.75rem;
     }
 
-    .step-number {
+    .process-step .step-number {
         align-self: center;
     }
 
